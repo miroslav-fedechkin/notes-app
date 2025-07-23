@@ -4,8 +4,8 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - .:/app
-    working_dir: /app
+      - .:/code
+    working_dir: /code
     environment:
-      - PYTHONPATH=/app
+      - PYTHONPATH=/code
     command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload

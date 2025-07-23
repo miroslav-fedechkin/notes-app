@@ -1,6 +1,6 @@
 from sqlalchemy import select
-from database import TaskOrm, new_session
-from shemas import STaskAdd
+from app.todo.database import TaskOrm, new_session
+from app.todo.shemas import STaskAdd
 
 
 class TaskRepository:

@@ -2,7 +2,7 @@ from typing import Annotated
 from fastapi import APIRouter, Depends
 
 from repository import *
-from shemas import *
+from app.todo.shemas import *
 
 
 router = APIRouter(
