@@ -1,0 +1,4 @@
+.venv/
+tasks.db
+.idea
+__pycache__
