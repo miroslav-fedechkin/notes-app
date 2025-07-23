@@ -14,3 +14,8 @@ class STask(STaskAdd):
 class STaskId(BaseModel):
     ok: bool = True
     id: int
+
+
+class STaskUpdate(BaseModel):
+    name: Optional[str]
+    description: Optional[str]

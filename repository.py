@@ -25,3 +25,20 @@ class TaskRepository:
             task_models = result.scalars().all()
             
             return task_models
+        
+    @classmethod
+    async def update_task(cls,
+                          task_id: int,
+                          **update_data):
+        async with new_session() as session:
+            result = await session.execute(
+                select(TaskOrm).where(TaskOrm.id == task_id)
+            )
+            task = result.scalar_one_or_none()
+
+            for key, value in update_data.items():
+                setattr(task, key, value)
+            
+            await session.commit()
+            await session.refresh(task)
+            return task
