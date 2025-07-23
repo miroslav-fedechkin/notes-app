@@ -17,5 +17,9 @@ class STaskId(BaseModel):
 
 
 class STaskUpdate(BaseModel):
-    name: Optional[str]
-    description: Optional[str]
+    name: Optional[str] = None
+    description: Optional[str] = None
+
+
+class STaskDelete(BaseModel):
+    id: int

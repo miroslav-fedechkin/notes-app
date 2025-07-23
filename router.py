@@ -24,10 +24,21 @@ async def get_tasks() -> list[STask]:
 
 @router.patch('update/{task_id}')
 async def update_task(task_id: int,
-                      update_data: STaskUpdate) -> STaskUpdate:
+                      update_data: STaskUpdate,
+                      task: Annotated[STaskUpdate, Depends()]) -> STaskUpdate:
     updated_task = await TaskRepository.update_task(
+        task,
         task_id=task_id,
-        **update_data.model_dump(exclude_unset=True)
+        **update_data.model_dump(exclude_unset=True),
+        
     )
     return updated_task
 
+
+@router.delete('delete/{task_id}')
+async def delete_task(task_id: int): 
+    deleted_task = await TaskRepository.delete_task(
+        task_id=task_id,
+
+    )
+    return deleted_task

@@ -42,3 +42,14 @@ class TaskRepository:
             await session.commit()
             await session.refresh(task)
             return task
+        
+    @classmethod
+    async def delete_task(cls, task_id: int):
+        async with new_session() as session:
+            result = await session.execute(
+                select(TaskOrm).where(TaskOrm.id == task_id)
+            )
+            task = result.scalar_one_or_none()
+            
+            await session.delete(task)
+            await session.commit()
