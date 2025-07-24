@@ -8,6 +8,6 @@
 
 #Запуск
 
-git clone https://github.com/kan1xx/todo
-cd todo
-docker-compose up  --build
+- git clone https://github.com/kan1xx/todo
+- cd todo
+- docker-compose up  --build
