@@ -1,7 +1,7 @@
 from typing import Annotated
 from fastapi import APIRouter, Depends
 
-from repository import *
+from app.todo.repository import *
 from app.todo.shemas import *
 
 
