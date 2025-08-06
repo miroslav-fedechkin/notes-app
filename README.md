@@ -1,13 +1,17 @@
-#Приложение для заметок на FastApi & SQLAlchemy
+Notes App with FastAPI & SQLAlchemy
 
-#Функционал:
-- Создание заметок
-- Чтение заметок
-- Редактирование заметок
-- Удаление заметок
+#Features
+- Create notes
+- Read notes
+- Edit notes
+- Delete notes
 
-#Запуск
-
+#Setup & Run
 - git clone https://github.com/kan1xx/todo
-- cd todo
-- docker-compose up  --build
+- cd todo  
+- docker-compose up --build  
+
+#Key Technologies Used
+- Backend: FastAPI (Python)
+- Database: SQLAlchemy (ORM)
+- Deployment: Docker
