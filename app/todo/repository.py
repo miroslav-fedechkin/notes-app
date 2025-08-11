@@ -17,6 +17,7 @@ class TaskRepository:
 
 
 
+
     @classmethod
     async def find_all(cls):
         async with new_session() as session:
