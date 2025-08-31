@@ -3,7 +3,7 @@ Notes App with FastAPI & SQLAlchemy
 #Features
 - Create notes
 - Read notes
-- Edit notes
+- Update notes
 - Delete notes
 
 #Setup & Run
