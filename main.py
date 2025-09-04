@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.todo.router import router as tasks_router
+from app.router import router as tasks_router
 
 
 app = FastAPI()

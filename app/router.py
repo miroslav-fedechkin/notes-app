@@ -1,8 +1,8 @@
 from typing import Annotated
 from fastapi import APIRouter, Depends
 
-from app.todo.repository import *
-from app.todo.shemas import *
+from app.repository import *
+from app.shemas import *
 
 
 router = APIRouter(
@@ -29,10 +29,10 @@ async def get_task_by_id(task_id: int) -> STaskAdd:
 
 @router.patch('update/{task_id}')
 async def update_task(task_id: int,
-                      update_data: STaskUpdate,
-                      task: Annotated[STaskUpdate, Depends()]) -> STaskUpdate:
+                      update_data: STaskUpdate):
+                      
     updated_task = await TaskRepository.update_task(
-        task,
+        
         task_id=task_id,
         **update_data.model_dump(exclude_unset=True),
         

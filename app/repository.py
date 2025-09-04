@@ -1,6 +1,6 @@
 from sqlalchemy import select
-from app.todo.database import TaskOrm, new_session
-from app.todo.shemas import STaskAdd
+from app.database import TaskOrm, new_session
+from app.shemas import STaskAdd, STaskId
 
 
 class TaskRepository:
@@ -32,6 +32,7 @@ class TaskRepository:
                           task_id: int,
                           **update_data):
         async with new_session() as session:
+            model = STaskId
             result = await session.execute(
                 select(TaskOrm).where(TaskOrm.id == task_id)
             )
