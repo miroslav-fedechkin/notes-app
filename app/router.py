@@ -3,7 +3,7 @@ from fastapi import APIRouter, Depends
 
 from app.repository import *
 from app.shemas import *
-
+from app.exceptions import *
 
 router = APIRouter(
     prefix='/tasks',
